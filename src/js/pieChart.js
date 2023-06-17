@@ -2,7 +2,7 @@
 function drawPieChart(element_id,source,total_amount,text) {
     const ctx = document.getElementById(element_id);
     const total = total_amount.reduce((partialSum, a) => partialSum + parseInt(a), 0);
-    console.log(total)
+    
     var unit = "";
     if(text=="金額"){
         unit = "元"
@@ -96,7 +96,7 @@ function type(data){
 }
 
 
-d3.csv("../../cleanDataSet/total_money_type.csv",type).then(function (data) {
+d3.csv("cleanDataSet/total_money_type.csv",type).then(function (data) {
 
     let source1 = [];
     let source2 = [];

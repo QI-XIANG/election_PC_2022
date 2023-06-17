@@ -1,10 +1,10 @@
-d3.csv("../../cleanDataSet/all_data.csv").then(function (data) {
+d3.csv("cleanDataSet/all_data.csv").then(function (data) {
     
     let tbody = document.getElementById("table_body");
 
     //交易日期 收支科目 捐贈者／支出對象 身分證／統一編號 收入金額 
     data.forEach(element => {
-        console.log(element)
+        
         tbody.innerHTML += `<tr>
                 <td>${element["交易日期"]}</td>
                 <td>${element["收支科目"]}</td>
