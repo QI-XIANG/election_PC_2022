@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>111年臺中市市長選舉 政治獻金來源調查</title>
+    <link href="./src/css/style.css" rel="stylesheet">
+    <link href="./src/css/preloader.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="./src/js/preloader.js"></script>
+</head>
+
+<body id="page-top" class="no-scroll-y">
+    <!-- Start: Preloader -->
+    <section id="preloader-section">
+        <div id="preloader">
+            <div id="ctn-preloader" class="ctn-preloader">
+                <div class="animation-preloader">
+
+                    <!-- Spinner -->
+                    <div class="spinner"></div>
+
+                    <!-- Start: Text Loading -->
+                    <div class="txt-loading">
+                        <span data-text-preloader="政" class="letters-loading">政</span>
+                        <span data-text-preloader="治" class="letters-loading">治</span>
+                        <span data-text-preloader="獻" class="letters-loading">獻</span>
+                        <span data-text-preloader="金" class="letters-loading">金</span>
+                        <span data-text-preloader="大" class="letters-loading">大</span>
+                        <span data-text-preloader="調" class="letters-loading">調</span>
+                        <span data-text-preloader="查" class="letters-loading">查</span>
+                    </div>
+                    <!-- End: Text Loading -->
+
+                </div>
+
+                <!-- Start: Preloader sides - Model 1 -->
+                <div class="loader-section section-left"></div>
+                <div class="loader-section section-right"></div>
+                <!-- End: Preloader sides - Model 1 -->
+
+            </div>
+        </div>
+    </section>
+    <!-- End: Preloader -->
+
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">2022年政治獻金來源調查</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav text-center">
+                        <a class="nav-link" href="#">陳美妃</a>
+                        <a class="nav-link" href="#">蔡其昌</a>
+                        <a class="nav-link active" href="#">盧秀燕</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4 col-12 mt-3 pt-xl-0">
+                <div class="graph-container" style="width:400px;height:400px;position: relative;">
+                    <div
+                        style="width: 100%; height: 40px; position: absolute; top: 50%; left: 0;margin-top: 20px; line-height:19px; text-align: center;z-index: -1;">
+                        捐贈總金額<Br /><Br />
+                        NT$62,285,444
+                    </div>
+                    <canvas id="myChart1"></canvas>
+                    <div
+                        style="width: 100%; height: 40px; position: absolute; top: 100%; left: 0;margin-top: 20px; line-height:19px; text-align: center;z-index: -1;">
+                        捐贈總金額來源以"個人捐贈收入"為主 (約佔56.33%)
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-12 mt-3 pt-xl-0 pt-5">
+                <div class="graph-container" style="width:400px;height:400px;position: relative;">
+                    <div
+                        style="width: 100%; height: 40px; position: absolute; top: 50%; left: 0;margin-top: 20px; line-height:19px; text-align: center;z-index: -1;">
+                        捐贈總筆數<Br /><Br />
+                        683筆
+                    </div>
+                    <canvas id="myChart2"></canvas>
+                    <div
+                        style="width: 100%; height: 40px; position: absolute; top: 100%; left: 0;margin-top: 20px; line-height:19px; text-align: center;z-index: -1;">
+                        捐贈總筆數來源以"個人捐贈收入"為主 (約佔83.16%)
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-12 mt-3 pt-xl-0 pt-5">
+                <div class="graph-container" style="width:400px;height:400px;position: relative;">
+                    <div
+                        style="width: 100%; height: 40px; position: absolute; top: 50%; left: 0;margin-top: 20px; line-height:19px; text-align: center;z-index: -1;">
+                        捐贈總筆數<Br /><Br />
+                        683筆
+                    </div>
+                    <canvas id="myChart3"></canvas>
+                    <div
+                        style="width: 100%; height: 40px; position: absolute; top: 100%; left: 0;margin-top: 20px; line-height:19px; text-align: center;z-index: -1;">
+                        捐贈縣市以"臺中市"為主 (約佔85.07%)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 mb-2 pt-2">
+        <table id="table_id" class="display">
+            <thead>
+                <tr>
+                    <th>交易日期</th>
+                    <th>收支科目</th>
+                    <th>捐贈者</th>
+                    <th>身分證／統一編號</th>
+                    <th>地址</th>
+                    <th>收入金額</th>
+                </tr>
+            </thead>
+            <tbody id="table_body">
+            </tbody>
+        </table>
+    </div>
+
+
+    <script src="//unpkg.com/d3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./src/js/pieChart.js"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="./src/js/datatable.js"></script>
+</body>
+</html>
