@@ -10,3 +10,18 @@
     margin: 0 auto;
 }
 
+a{
+    text-decoration: none !important;
+}
+
+.navbar-brand{
+    color: white !important;
+}
+
+a.nav-link{
+    color: white !important;
+}
+
+a.nav-link.active{
+    color: yellow !important;
+}

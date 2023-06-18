@@ -1,4 +1,4 @@
-d3.csv("cleanDataSet/all_data.csv").then(function (data) {
+/*d3.csv("cleanDataSet/all_data.csv").then(function (data) {
     
     let tbody = document.getElementById("table_body");
 
@@ -21,4 +21,16 @@ d3.csv("cleanDataSet/all_data.csv").then(function (data) {
             url: "https://cdn.datatables.net/plug-ins/1.11.3/i18n/zh_Hant.json"
         }
     });
-})
+})*/
+
+$(document).ready(function () {
+    let fileValue = document.querySelector("a.nav-link.active").dataset["value"]
+    $('#table_id').DataTable({
+        ajax: 'cleanDataSet/all_data_'+fileValue+'.json',
+        "lengthMenu": [[10, 15, 20], [10, 15, 20]],
+        "processing": true,
+        language: {
+            url: "https://cdn.datatables.net/plug-ins/1.11.3/i18n/zh_Hant.json"
+        }
+    });
+});
